@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
+  <link style = "border-radius: 50%" ; rel="icon"  href="images/a.png">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sample HTML Code - NewsLetter Form</title>
+  
+                     <!--           css start            -->  
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
+                          
     body {
       display: flex;
       justify-content: center;
@@ -185,9 +187,13 @@
       }
     }
   </style>
+
+                         <!--          css  end         -->
 </head>
 
+
 <body>
+
   <main>
     <!-- intro section -->
     <section class="intro">
@@ -201,47 +207,109 @@
     <section class="sign-up">
       <p class="sign-up-para">Sign up for our fest and get 10% off for your first register</p>
       <!-- the form itself -->
-      <form class="sign-up-form">
+      <form class="sign-up-form" name="forms" id="forms">
         <div class="form-input">
-          <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
+          <input type="text" name="fname" id="fname" placeholder="First Name" required>
           <span>!</span>
-          <p class="warning">First name cannot be empty</p>
         </div>
 
         <div class="form-input">
-          <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+          <input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
           <span>!</span>
-          <p class="warning">Last name cannot be empty</p>
         </div>
 
         <div class="form-input">
           <input type="email" name="email" id="email" placeholder="Email Address" required>
           <span>!</span>
-          <p class="warning">Looks like this is not an email</p>
         </div>
 
         <div class="form-input">
-          <input type="Password" name="Password" id="Password" placeholder="Password" required>
+          <input type="Password" name="pwd" id="pwd" placeholder="Password" required>
           <span>!</span>
-          <p class="warning">Password cannot be empty</p>
+        </div>
+
+        <div class="form-input">
+          <input type="college" name="cn" id="cn" placeholder="college name" required>
+          <span>!</span>
         </div>
         <div class="form-input">
             <input type="year" name="year" id="year" placeholder="current year" required>
             <span>!</span>
-            <p class="warning">Password cannot be empty</p>
           </div>
-          <div class="form-input">
-            <input type="college" name="college" id="college" placeholder="college name" required>
-            <span>!</span>
-            <p class="warning">Password cannot be empty</p>
-          </div>
+          
 
-        <input class="submit-btn" type="submit" value="register">
+        <button type="submit" class="submit-btn" onclick="vali()">Sign up</button>
         <a href="html/anoka.html"><input class="submit-btn" style="text-align:center ;" value="free watch out"></a>
-        <p class="form-term">By clicking the button, you are agreeing to our <span>Terms and Services</span> </p>
+        <p class="form-term">You are always welcome to be a part of <ins style="color: #A4123F;"><span>Amrita family</span></ins> </p>
       </form>
     </section>
   </main>
-</body>
+  <script>
 
+    function vali() {
+    let a= document.forms.fname.value;
+    let l= document.getElementById("lastname").value;
+    let b= document.getElementById("pwd").value;
+    let c= document.getElementById("pwd").value;
+    let d= document.getElementById("email").value;
+    let e= document.getElementById("cn").value;
+    if(a=="")
+    {
+      alert("User Name Must be entered!!");
+      return false;
+    }
+    if(l=="")
+    {
+      alert("Enter the Last Name");
+      return false;
+    }
+    if(b=="")
+    {
+      alert("Please enter the Password");
+      return false;
+    }
+    if(c=="")
+    {
+      alert("Re-Enter the password");
+      return false;
+    }
+    if(c=="")
+    {
+      alert("Re-Enter the password");
+      return false;
+    }
+    if(d=="")
+    {
+      alert("Enter Your Email");
+      return false;
+    
+    }
+    if(e=="")
+    {
+      alert("Enter your college name");
+      return false;
+    
+    }
+    
+    if(a.length <=3 || a.length>20)
+                        {
+                            alert("User Name must be within the range 3-24");
+                            return false;
+                        }
+    if(b.length<8 ||  b.length>24)
+                        {
+                            alert("Password must be within the range 8-24");
+                            return false;
+                
+                        }
+    
+    else{
+              alert("your response has been submitted");
+                        window.location.reload();
+                        return true;
+    
+    }
+    }
+    </script>
+</body>
 </html>
